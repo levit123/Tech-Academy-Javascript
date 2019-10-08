@@ -8,7 +8,7 @@ document.write(B);
 document.write(Name2);
 
 function myFirstFunction() {
-    var str = "This text is blue";
-    var result = str.fontcolor("blue");
-    document.getElementById("Blue_Text").innerHTML = result;
+    var str = "This text is green";
+    var result = str.fontcolor("green");
+    document.getElementById("Green_Text").innerHTML = result;
 }

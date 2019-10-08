@@ -2,12 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <script src="JS/Basic_Javascript_1.js"></script>
-    <title></title>
+    <title>first test</title>
 </head>
 <body>
-    <button onclick="My_First_Function()" id="Blue_Text">
+    <button onclick="myFirstFunction()" id="Green_Text">
         Click Me!
     </button>
+
+    <script>
+        function myFirstFunction() {
+            var str = "This text is green";
+            var result = str.fontcolor("green");
+            document.getElementById("Green_Text").innerHTML = result;
+        }
+    </script>
+
 </body>
 </html>
