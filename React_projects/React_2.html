@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>React 2 - Like button</title>
+    <!--pulls from the React library using via URL-->
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+</head>
+<body>
+    <div id="like_button_container">
+        <script>
+            const x = React.createElement;
+
+            class likeButton extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = { liked: false };
+                }
+
+                render() {
+                    if (this.state.liked) {
+                        return 'You clicked the like button!';
+                    }
+
+                    return x (
+                        'button',
+                            { onClick: () => this.setState({ liked: true }) },
+                            'Like'
+                    );
+                }
+            }
+
+            const domContainer = document.querySelector('#like_button_container');
+            ReactDOM.render(x(likeButton), domContainer);
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--pulls from the React javascript library-->
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+</head>
+<body>
+    <div id="My_React_Code">
+        <!--uses javascript to create a counter to keep track of how long the program has been running-->
+        <script>
+            //creates a timer using the "React.createClass" function and defines the React-related variables associated with the React function and class
+            var counter = React.createClass({
+                render: function() {
+                    var time_Passed = Math.round(this.props.time_Passed / 100);
+                    //keeps track of home many seconds have passed
+                    var seconds_Passed = time_Passed / 10 + (time_Passed % 10 ? '' : '.0');
+                    var text = 'My React code started running ' + seconds_Passed + ' seconds ago';
+                    return React.DOM.p(null, text);
+                }
+            });
+
+            var counter_Factory = React.createFactory(counter);
+
+            //defines a specific point in time (in this case, the moment the program is loaded in the browser) to start the timer
+            var start_Counting = new Date().getTime();
+
+            setInterval(function () {
+                ReactDOM.render(
+                    counter_Factory({ time_Passed: new Date().getTime() - start_Counting }), document.getElementById('My_React_Code')
+                );
+            }, 50);
+        </script>
+    </div>
+</body>
+</html>

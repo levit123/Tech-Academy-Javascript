@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>React 3</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="http://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id='JSX'>
+        <script type="text/babel">
+            class Greeting extends React.Component {
+                render() {
+                    return <h1>Hello, World!</h1>
+                }
+            }
+
+            ReactDOM.render(<Greeting />, document.getElementById('JSX'))
+        </script>
+    </div>
+</body>
+</html>
